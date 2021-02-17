@@ -32,20 +32,20 @@ class ReFacteredCodeMinamalist {
     public void rearangeStreams() {
 
     	ByteArrayOutputStream byteArrayOSOut = new ByteArrayOutputStream();
-		  PrintStream previousSystemOut = reWireOutput(byteArrayOSOut);
+	PrintStream previousSystemOut = reWireOutput(byteArrayOSOut);
 	    
-	    String testString = "Hello You!";
+	String testString = "Hello You!";
       
-      InputStream previousSystemIn = reWireInput(testString);
+        InputStream previousSystemIn = reWireInput(testString);
  
-      ScannerTest.main(null);  // The Class.main method we're testing.
+        ScannerTest.main(null);  // The Class.main method we're testing.
 
-      restoreSystemInAndSystemOut(previousSystemOut, previousSystemIn);
+        restoreSystemInAndSystemOut(previousSystemOut, previousSystemIn);
       
-      String expected = "You said " + testString + "\n";  // expected output
-	    String actual = byteArrayOSOut.toString();  // Get our output from ScannerTest back and stick it in actual
+        String expected = "You said " + testString + "\n";  // expected output
+	String actual = byteArrayOSOut.toString();  // Get our output from ScannerTest back and stick it in actual
        
-	    assertEquals(expected, actual);
+	assertEquals(expected, actual);
     }
 }
 
